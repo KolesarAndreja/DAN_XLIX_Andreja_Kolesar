@@ -293,7 +293,7 @@ namespace DAN_XLIX.ViewModel
 
         private bool CanSaveExecute()
         {
-            if (Service.Service.IsValidUser(newEmployee.username, newEmployee.password) == null)
+            if (Service.Service.IsValidUser(newEmployee.username, newEmployee.password) == null && !String.IsNullOrEmpty(newEmployee.fullname) && !String.IsNullOrEmpty(newEmployee.email) && !String.IsNullOrEmpty(newEmployee.username) && !String.IsNullOrEmpty(newEmployee.password))
             {
                 return true;
             }
@@ -343,7 +343,7 @@ namespace DAN_XLIX.ViewModel
 
         private bool CanSave2Execute()
         {
-            if (Service.Service.IsValidUser(newEmployee.username, newEmployee.password) == null)
+            if (Service.Service.IsValidUser(newEmployee.username, newEmployee.password) == null && !String.IsNullOrEmpty(newEmployee.fullname) && !String.IsNullOrEmpty(newEmployee.email) && !String.IsNullOrEmpty(newEmployee.username) &&!String.IsNullOrEmpty(newEmployee.password))
             {
                 return true;
             }

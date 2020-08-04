@@ -100,6 +100,7 @@ namespace DAN_XLIX.Service
                         //add 
                         tblManager newManager = new tblManager();
                         newManager.name = "manager";
+                        newManager.userId = manager.userId;
                         newManager.floorNumber = manager.floorNumber;
                         newManager.workExperience = manager.workExperience;
                         newManager.qualificationId = manager.qualificationId;
@@ -130,6 +131,7 @@ namespace DAN_XLIX.Service
                     {
                         //add 
                         tblStaff newStaff = new tblStaff();
+                        newStaff.userId = staff.userId;
                         newStaff.citizenship = staff.citizenship;
                         newStaff.floorNumber = staff.floorNumber;
                         newStaff.engegamentId = staff.engegamentId;

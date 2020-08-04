@@ -268,7 +268,7 @@
                    Width="90"
                    RenderTransformOrigin="0.5,0.5"></Label>
             <TextBox x:Name="txtAccount_Copy"
-                     Text="{Binding newManaager.citizenship, UpdateSourceTrigger=PropertyChanged}"
+                     Text="{Binding newStaff.citizenship, UpdateSourceTrigger=PropertyChanged}"
                      HorizontalAlignment="Left"
                      Height="23"
                      Margin="480,370,0,0"
