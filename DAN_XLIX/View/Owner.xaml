@@ -140,7 +140,10 @@
                    VerticalAlignment="Top"
                    Width="155" />
             <ComboBox HorizontalAlignment="Left"
-                      Text="{Binding newManager.qualificationId, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="name"
+                      IsEditable="True"
+                      ItemsSource="{Binding qualificationList, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding qualification, UpdateSourceTrigger=PropertyChanged}"
                       Height="25"
                       Margin="120,380,0,0"
                       VerticalAlignment="Top"
@@ -249,7 +252,10 @@
                    VerticalAlignment="Top"
                    Width="90" />
             <ComboBox HorizontalAlignment="Left"
-                      Text="{Binding newStaff.genderId, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="name"
+                      IsEditable="True"
+                      ItemsSource="{Binding genderList, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding gender, UpdateSourceTrigger=PropertyChanged}"
                       Height="25"
                       Margin="480,330,0,0"
                       VerticalAlignment="Top"
@@ -286,7 +292,10 @@
                 </Label.RenderTransform>
             </Label>
             <ComboBox HorizontalAlignment="Left"
-                      Text="{Binding newStaff.engegamentId, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="name"
+                      IsEditable="True"
+                      ItemsSource="{Binding engagementList, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding engagement, UpdateSourceTrigger=PropertyChanged}"
                       Height="25"
                       Margin="480,415,0,0"
                       VerticalAlignment="Top"

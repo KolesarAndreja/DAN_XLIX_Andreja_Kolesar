@@ -2,6 +2,7 @@
 using DAN_XLIX.Service;
 using DAN_XLIX.View;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
 
@@ -52,6 +53,90 @@ namespace DAN_XLIX.ViewModel
                 OnPropertyChanged("newStaff");
             }
         }
+
+        private List<tblGender> _genderList;
+        public List<tblGender> genderList
+        {
+            get
+            {
+                return _genderList;
+            }
+            set
+            {
+                _genderList = value;
+                OnPropertyChanged("genderList");
+            }
+        }
+
+        private List<tblProfessionalQualification> _qualificationList;
+        public List<tblProfessionalQualification> qualificationList
+        {
+            get
+            {
+                return _qualificationList;
+            }
+            set
+            {
+                _qualificationList = value;
+                OnPropertyChanged("qualificationList");
+            }
+        }
+
+        private List<tblEngagement> _engagementList;
+        public List<tblEngagement> engagementList
+        {
+            get
+            {
+                return _engagementList;
+            }
+            set
+            {
+                _engagementList = value;
+                OnPropertyChanged("engagementList");
+            }
+        }
+
+        private tblProfessionalQualification _qualification;
+        public tblProfessionalQualification qualification
+        { 
+            get
+            {
+                return _qualification;
+            }
+            set
+            {
+                _qualification = value;
+                OnPropertyChanged("qualification");
+            }
+        }
+
+        private tblGender _gender;
+        public tblGender gender
+        {
+            get
+            {
+                return _gender;
+            }
+            set
+            {
+                _gender = value;
+                OnPropertyChanged("gender");
+            }
+        }
+
+        private tblEngagement _engagement;
+        public tblEngagement engagement
+        {
+            get
+            {
+                return _engagement;
+            }
+            set
+            {
+                _engagement = value;
+                OnPropertyChanged("engagement");
+            }
+        }
         #endregion
 
         #region constructor
@@ -61,6 +146,13 @@ namespace DAN_XLIX.ViewModel
             newEmployee = new tblUser();
             newManager = new tblManager();
             newStaff = new tblStaff();
+            qualification = new tblProfessionalQualification();
+            engagement = new tblEngagement();
+            gender = new tblGender();
+
+            engagementList = Service.Service.GetEngagementList();
+            qualificationList = Service.Service.GetQualificationList();
+            genderList = Service.Service.GetGenderList();
         }
         #endregion
 
@@ -182,8 +274,10 @@ namespace DAN_XLIX.ViewModel
         {
             try
             {
+                
                 tblUser e = Service.Service.AddUser(newEmployee);
                 newManager.userId = e.userId;
+                newManager.qualificationId = qualification.id;
                 tblManager me = Service.Service.AddManager(newManager);
 
                 if (e != null && me!=null)
@@ -228,6 +322,8 @@ namespace DAN_XLIX.ViewModel
             {
                 tblUser e = Service.Service.AddUser(newEmployee);
                 newStaff.userId = e.userId;
+                newStaff.genderId = gender.id;
+                newStaff.engegamentId = engagement.id;
                 tblStaff me = Service.Service.AddStaff(newStaff);
 
                 if (e != null && me!=null)

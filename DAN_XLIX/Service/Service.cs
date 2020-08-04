@@ -148,5 +148,64 @@ namespace DAN_XLIX.Service
             }
         }
         #endregion
+
+        #region GET LISTS
+
+        public static List<tblGender> GetGenderList()
+        {
+            try
+            {
+                using (dbHotelEntities context = new dbHotelEntities())
+                {
+                    List<tblGender> list = new List<tblGender>();
+                    list = (from x in context.tblGenders select x).ToList();
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception" + ex.Message.ToString());
+                return null;
+            }
+        }
+
+        public static List<tblProfessionalQualification> GetQualificationList()
+        {
+            try
+            {
+                using (dbHotelEntities context = new dbHotelEntities())
+                {
+                    List<tblProfessionalQualification> list = new List<tblProfessionalQualification>();
+                    list = (from x in context.tblProfessionalQualifications select x).ToList();
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception" + ex.Message.ToString());
+                return null;
+            }
+        }
+
+
+        public static List<tblEngagement> GetEngagementList()
+        {
+            try
+            {
+                using (dbHotelEntities context = new dbHotelEntities())
+                {
+                    List<tblEngagement> list = new List<tblEngagement>();
+                    list = (from x in context.tblEngagements select x).ToList();
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception" + ex.Message.ToString());
+                return null;
+            }
+        }
+        #endregion
+
     }
 }
