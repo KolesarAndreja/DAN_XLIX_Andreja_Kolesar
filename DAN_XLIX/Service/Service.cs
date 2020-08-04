@@ -99,6 +99,7 @@ namespace DAN_XLIX.Service
                     {
                         //add 
                         tblManager newManager = new tblManager();
+                        newManager.name = "manager";
                         newManager.floorNumber = manager.floorNumber;
                         newManager.workExperience = manager.workExperience;
                         newManager.qualificationId = manager.qualificationId;
